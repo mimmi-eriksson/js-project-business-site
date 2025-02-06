@@ -1,15 +1,18 @@
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #F2F4F9;
+  font-family: "Comic Neue", sans-serif;
+  background: #f6f2f9;
 }
 
 header {
   background: #2C3E50;
+  position: sticky;
+  top: 0;
 }
 
 .nav-bar {
   color: #FFFFFF;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,9 +26,11 @@ header {
 }
 
 .nav-logo p {
-  width: 50px;
+  width: 130px;
   margin: 0;
-  font-size: 14px;
+  font-family: "Sofia", sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 .logo {
@@ -37,65 +42,97 @@ header {
   display: none;
 }
 
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-right: 20px;
+}
+
+.hamburger-icon div {
+  background: #FFFFFF;
+  width: 40px;
+  height: 4px;
+  border-radius: 5px;
+}
+
 .welcome-section {
-  text-align: center;
-  margin: 40px 50px 20px 50px;
+  max-width: 640px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px 40px;
+}
+
+.welcome-section p {
+  text-align: justify;
 }
 
 .welcome-section h1 {
-  margin: 0;
+  font-family: "Galada", sans-serif;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.welcome-section p {
+  font-size: 15px;
 }
 
 .main-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 40px 60px 40px;
+  max-width: 1000px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px 60px;
-}
-
-.card {
-  background: #FFFFFF;
-  border: 2px solid #F5B7B1;
-  padding: 20px 40px;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-rows: auto;
   gap: 30px;
+  justify-items: center;
 }
 
 .monthly-unicorn-text {
   display: none;
 }
 
-/* Hide the unicorn names */
-.card h2 {
-  display: none;
+.card {
+  box-sizing: border-box;
+  background: #FFFFFF;
+  box-shadow: 5px 5px 5px #d8b3d6;
+  padding: 30px 40px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 25px;
 }
 
 figure {
   margin: 0;
 }
 
-figcaption {
-  bottom: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-  color: white;
-  text-align: center;
-  font-size: 16px;
-  padding: 10px 0;
-}
-
 img {
   width: 100%;
+}
+
+/* Hide figcaption */
+figcaption {
+  display: none;
 }
 
 .info-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 5px;
   justify-content: space-between;
+}
+
+.card h2 {
+  margin: 0;
+  font-family: "Galada", sans-serif;
+  color: #4e036e;
+  font-size: 26px;
+  font-weight: 500;
 }
 
 .stats-container {
@@ -104,7 +141,7 @@ img {
   gap: 2px;
 }
 
-/* Hide the stat names */
+/* Hide the stat names*/
 .stat h3 {
   display: none;
 }
@@ -120,31 +157,193 @@ img {
   font-size: 14px;
 }
 
-/* Hide the unicorn descriptions */
+/* Hide the unicorn descriptions*/
 .card .description {
   display: none;
 }
 
 .card .button {
-  background: #FFD700;
+  background: #fce044;
   text-align: center;
   text-decoration: none;
   color: black;
+  margin: 20px 40px 0 40px;
   padding: 10px;
   border-radius: 30px;
 }
 
+.card .button:hover {
+  background: #c49dd3;
+}
+
+.card .button p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Only display button text 'Learn more' */
+.card .button-book {
+  display: none;
+}
+
+/* Put the monthly unicorn first and show its information */
+.monthly-unicorn {
+  grid-row: 1/2;
+}
+
+.monthly-unicorn .info-container {
+  gap: 10px;
+}
+
+.monthly-unicorn .stats-container {
+  flex-direction: column;
+}
+
+.monthly-unicorn .stat h3 {
+  display: initial;
+  margin: 0;
+  font-size: 14px;
+}
+
+.monthly-unicorn .description {
+  display: initial;
+  margin: 0;
+  text-align: justify;
+  font-size: 14px;
+}
+
+/* Only display button text 'Book now' */
+.monthly-unicorn .button-more-info {
+  display: none;
+}
+
+.monthly-unicorn .button-book {
+  display: initial;
+}
+
 footer {
   background: #2C3E50;
-  color: #FFFFFF;
-  padding: 15px;
+}
+
+footer p {
+  color: #f6f2f9;
+  text-align: center;
+  font-size: 12px;
+  padding: 30px;
 }
 
 
+/* Small mobile devices */
+
+@media (max-width: 374px) {
+
+  .main-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .card {
+    max-width: 260px;
+  }
+
+  /* smaller fonts */
+  .card h2 {
+    font-size: 22px;
+  }
+
+  .card .description {
+    font-size: 12px;
+  }
+
+  .card .stat p {
+    font-size: 12px;
+  }
+
+  .card .stat h3 {
+    font-size: 12px;
+  }
+
+  .card .button p {
+    font-size: 12px;
+  }
+
+}
+
+/* Tablets */
+
+@media (min-width: 660px) {
+
+  /* For the monthly unicorn, span card overall columns and adjust*/
+  .monthly-unicorn {
+    max-width: fit-content;
+    flex-direction: row;
+    grid-column: 1/-1;
+  }
+
+  .monthly-unicorn .info-container {
+    gap: 10px;
+  }
+
+  .monthly-unicorn .button-book {
+    font-size: 16px;
+  }
+
+}
+
+/* Larger tablets */
+
+@media (min-width: 900px) {
+
+  /* Adjust logo text*/
+  .nav-logo p {
+    width: 140px;
+    font-size: 20px;
+  }
+
+  /* Adjust welcome text */
+  .welcome-section p {
+    font-size: 18px;
+  }
+
+  /* Adjust monthly unicorn card*/
+  .monthly-unicorn {
+    padding: 40px;
+    gap: 40px;
+  }
+
+  .monthly-unicorn .info-container {
+    gap: 20px;
+  }
+
+  .monthly-unicorn .stat h3 {
+    font-size: 16px;
+  }
+
+  .monthly-unicorn .stat p {
+    font-size: 16px;
+  }
+
+  .monthly-unicorn .description {
+    font-size: 18px;
+  }
+
+}
+
+/* Desktop */
+
 @media (min-width: 1024px) {
 
-  /* Make the logo text bigger and in one (or two) lines */
+  /* Make the logo text bigger and in one line */
+  .nav-logo p {
+    width: auto;
+    font-size: 26px;
+  }
 
+  /* Hide the hamburge icon */
+  .hamburger-icon {
+    display: none;
+  }
 
   /*Show and style the links of the navigation bar*/
   .nav-links {
@@ -154,51 +353,21 @@ footer {
   .nav-links a {
     text-decoration: none;
     color: #FFFFFF;
-    padding: 26px;
-  }
-
-  /* For the monthly unicorn expand the information */
-  .monthly-unicorn {
-    flex-direction: row;
-    grid-column: span 3;
-    padding: 40px;
-    gap: 40px;
-  }
-
-  /* Show the unicorn name */
-  .monthly-unicorn h2 {
-    display: initial;
-    margin: 0;
-  }
-
-  .monthly-unicorn figcaption {
-    display: none;
-  }
-
-  .monthly-unicorn .info-container {
-    gap: 20px;
-  }
-
-  .monthly-unicorn .stats-container {
-    flex-direction: column;
-  }
-
-  /* Show the stat names */
-  .monthly-unicorn .stat h3 {
-    display: initial;
-    margin: 0;
-    font-size: 16px;
-  }
-
-  .monthly-unicorn .stat p {
-    font-size: 16px;
-  }
-
-  /* Show the unicorn description */
-  .monthly-unicorn .description {
-    display: initial;
-    margin: 0;
+    padding: 30px 16px;
     font-size: 18px;
+  }
+
+  .nav-links a:hover {
+    background: #8AB6D6;
+  }
+
+  /* For the monthly unicorn, span card over 3 columns and adjust fonts */
+  .monthly-unicorn {
+    grid-column: 1/4;
+  }
+
+  .monthly-unicorn h2 {
+    font-size: 30px;
   }
 
 
