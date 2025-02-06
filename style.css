@@ -1,0 +1,205 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #F2F4F9;
+}
+
+header {
+  background: #2C3E50;
+}
+
+.nav-bar {
+  color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.nav-logo p {
+  width: 50px;
+  margin: 0;
+  font-size: 14px;
+}
+
+.logo {
+  width: 50px;
+}
+
+/* Hide the links of the navigation bar */
+.nav-links {
+  display: none;
+}
+
+.welcome-section {
+  text-align: center;
+  margin: 40px 50px 20px 50px;
+}
+
+.welcome-section h1 {
+  margin: 0;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 60px;
+}
+
+.card {
+  background: #FFFFFF;
+  border: 2px solid #F5B7B1;
+  padding: 20px 40px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.monthly-unicorn-text {
+  display: none;
+}
+
+/* Hide the unicorn names */
+.card h2 {
+  display: none;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px 0;
+}
+
+img {
+  width: 100%;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+/* Hide the stat names */
+.stat h3 {
+  display: none;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.stat p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Hide the unicorn descriptions */
+.card .description {
+  display: none;
+}
+
+.card .button {
+  background: #FFD700;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+footer {
+  background: #2C3E50;
+  color: #FFFFFF;
+  padding: 15px;
+}
+
+
+@media (min-width: 1024px) {
+
+  /* Make the logo text bigger and in one (or two) lines */
+
+
+  /*Show and style the links of the navigation bar*/
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 26px;
+  }
+
+  /* For the monthly unicorn expand the information */
+  .monthly-unicorn {
+    flex-direction: row;
+    grid-column: span 3;
+    padding: 40px;
+    gap: 40px;
+  }
+
+  /* Show the unicorn name */
+  .monthly-unicorn h2 {
+    display: initial;
+    margin: 0;
+  }
+
+  .monthly-unicorn figcaption {
+    display: none;
+  }
+
+  .monthly-unicorn .info-container {
+    gap: 20px;
+  }
+
+  .monthly-unicorn .stats-container {
+    flex-direction: column;
+  }
+
+  /* Show the stat names */
+  .monthly-unicorn .stat h3 {
+    display: initial;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .monthly-unicorn .stat p {
+    font-size: 16px;
+  }
+
+  /* Show the unicorn description */
+  .monthly-unicorn .description {
+    display: initial;
+    margin: 0;
+    font-size: 18px;
+  }
+
+
+}
