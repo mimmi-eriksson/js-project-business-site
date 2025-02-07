@@ -4,20 +4,25 @@ body {
   background: #f6f2f9;
 }
 
+/* HEADER-------------------------- */
+
+/* Keep header on top when scrolling down */
 header {
-  background: #2C3E50;
   position: sticky;
   top: 0;
+  background: #2C3E50;
 }
 
+/* Navigation bar */
 .nav-bar {
-  color: #FFFFFF;
-  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #FFFFFF;
+  height: 80px;
 }
 
+/* Logo */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -25,23 +30,26 @@ header {
   padding: 10px;
 }
 
+/* Logo text */
 .nav-logo p {
-  width: 130px;
   margin: 0;
+  width: 130px;
   font-family: "Sofia", sans-serif;
   font-size: 18px;
   line-height: 1.2;
 }
 
-.logo {
+/* Logo icon */
+.logo-icon {
   width: 50px;
 }
 
-/* Hide the links of the navigation bar */
+/* Hide the links in the navigation bar for mobile */
 .nav-links {
   display: none;
 }
 
+/* Hamburger icon */
 .hamburger-icon {
   display: flex;
   flex-direction: column;
@@ -56,17 +64,18 @@ header {
   border-radius: 5px;
 }
 
+/* WELCOME SECTION-------------------------- */
+
 .welcome-section {
   max-width: 640px;
   margin-right: auto;
   margin-left: auto;
-  padding: 20px 40px;
-}
-
-.welcome-section p {
+  padding: 20px 45px;
   text-align: justify;
+  font-size: 15px;
 }
 
+/* Welcome heading */
 .welcome-section h1 {
   font-family: "Galada", sans-serif;
   text-align: center;
@@ -75,42 +84,45 @@ header {
   line-height: 1.2;
 }
 
-.welcome-section p {
-  font-size: 15px;
-}
+/* Main section----------------------------- */
 
+/* CSS grid on main container */
 .main-container {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px 40px 60px 40px;
-  max-width: 1000px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-template-rows: auto;
   gap: 30px;
   justify-items: center;
+  padding: 20px 40px 60px 40px;
+  /* To align the content in the center of page */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
 }
 
 .monthly-unicorn-text {
   display: none;
 }
 
+/* Each card is a flexbox */
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 25px;
   box-sizing: border-box;
   background: #FFFFFF;
   box-shadow: 5px 5px 5px #d8b3d6;
   padding: 30px 40px;
   border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 25px;
 }
 
+/* Figure */
 figure {
   margin: 0;
 }
 
+/* Size of image to fit the figure element*/
 img {
   width: 100%;
 }
@@ -120,6 +132,7 @@ figcaption {
   display: none;
 }
 
+/* Container with info is a flexbox */
 .info-container {
   display: flex;
   flex-direction: column;
@@ -127,6 +140,7 @@ figcaption {
   justify-content: space-between;
 }
 
+/* Card heading - unicorn name */
 .card h2 {
   margin: 0;
   font-family: "Galada", sans-serif;
@@ -135,17 +149,19 @@ figcaption {
   font-weight: 500;
 }
 
+/* Hide the unicorn descriptions*/
+.card .description {
+  display: none;
+}
+
+/* Container with stats is a flexbox */
 .stats-container {
   display: flex;
   flex-wrap: wrap;
   gap: 2px;
 }
 
-/* Hide the stat names*/
-.stat h3 {
-  display: none;
-}
-
+/* Each stat is a flexbox */
 .stat {
   display: flex;
   align-items: center;
@@ -157,11 +173,12 @@ figcaption {
   font-size: 14px;
 }
 
-/* Hide the unicorn descriptions*/
-.card .description {
+/* Hide the stat headings*/
+.stat h3 {
   display: none;
 }
 
+/* Button styling*/
 .card .button {
   background: #fce044;
   text-align: center;
@@ -172,44 +189,52 @@ figcaption {
   border-radius: 30px;
 }
 
+/* Change color of button on hover */
 .card .button:hover {
   background: #c49dd3;
 }
 
+/* Button text styling */
 .card .button p {
   margin: 0;
   font-size: 14px;
   font-weight: 600;
 }
 
-/* Only display button text 'Learn more' */
+/* Only display the 'Learn more'-button (hide the 'Book now'-button */
 .card .button-book {
   display: none;
 }
 
-/* Put the monthly unicorn first and show its information */
+/* UNICORN OF THE MONTH */
+
+/* Place the monthly unicorn card first in the grid*/
 .monthly-unicorn {
   grid-row: 1/2;
 }
 
-.monthly-unicorn .info-container {
-  gap: 10px;
-}
-
-.monthly-unicorn .stats-container {
-  flex-direction: column;
-}
-
-.monthly-unicorn .stat h3 {
-  display: initial;
-  margin: 0;
-  font-size: 14px;
-}
-
+/* Show the description */
 .monthly-unicorn .description {
   display: initial;
   margin: 0;
   text-align: justify;
+  font-size: 14px;
+}
+
+/* adjusting gap size on information container */
+.monthly-unicorn .info-container {
+  gap: 10px;
+}
+
+/* Change flex direction for the stat container */
+.monthly-unicorn .stats-container {
+  flex-direction: column;
+}
+
+/* Show the stat headings */
+.monthly-unicorn .stat h3 {
+  display: initial;
+  margin: 0;
   font-size: 14px;
 }
 
@@ -222,6 +247,8 @@ figcaption {
   display: initial;
 }
 
+/* FOOTER----------------------------------- */
+
 footer {
   background: #2C3E50;
 }
@@ -233,11 +260,13 @@ footer p {
   padding: 30px;
 }
 
+/* MEDIA QUERIES---------------------------- */
 
 /* Small mobile devices */
 
 @media (max-width: 374px) {
 
+  /* Adjustments to keep the cards in the middle of the page */
   .main-container {
     padding-left: 0;
     padding-right: 0;
@@ -247,7 +276,7 @@ footer p {
     max-width: 260px;
   }
 
-  /* smaller fonts */
+  /* decrease font sizes of the cards */
   .card h2 {
     font-size: 22px;
   }
@@ -274,17 +303,14 @@ footer p {
 
 @media (min-width: 660px) {
 
-  /* For the monthly unicorn, span card overall columns and adjust*/
+  /* For the monthly unicorn, span card overall columns and change flex direction*/
   .monthly-unicorn {
-    max-width: fit-content;
     flex-direction: row;
     grid-column: 1/-1;
+    max-width: fit-content;
   }
 
-  .monthly-unicorn .info-container {
-    gap: 10px;
-  }
-
+  /* Increase button font size */
   .monthly-unicorn .button-book {
     font-size: 16px;
   }
@@ -360,15 +386,5 @@ footer p {
   .nav-links a:hover {
     background: #8AB6D6;
   }
-
-  /* For the monthly unicorn, span card over 3 columns and adjust fonts */
-  .monthly-unicorn {
-    grid-column: 1/4;
-  }
-
-  .monthly-unicorn h2 {
-    font-size: 30px;
-  }
-
 
 }
