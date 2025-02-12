@@ -13,7 +13,7 @@
   >
   <link
     rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Sofia|Comic+Neue|Galada"
+    href="https://fonts.googleapis.com/css?family=Sofia|Comic+Neue|Galada|Montserrat"
   >
   <title>Starlight Unicorn Rentals</title>
 </head>
@@ -36,7 +36,6 @@
       <a href="#">Home</a>
       <a href="#">Book a Unicorn</a>
       <a href="#">Gallery</a>
-      <a href="#">FAQ</a>
       <a href="#">About us</a>
       <a href="#">Contact</a>
     </div>
@@ -58,6 +57,11 @@
   </header>
 
   <!--Main section-->
+  <div class="section-heading">
+    <h2>Our Unicorns</h2>
+    <hr>
+  </div>
+
   <section class="main-section">
 
     <!--Unicorn of the month text-->
@@ -719,6 +723,182 @@
       </article>
 
     </article>
+
+  </section>
+
+  <!-- Booking form section -->
+
+  <div class="section-heading">
+    <h2>Book a Unicorn</h2>
+    <hr>
+  </div>
+
+  <section class="form-section">
+
+    <form
+      action="http://httpbin.org/anything"
+      method="POST"
+    >
+      <!-- Personal info: Name, email, phone number-->
+      <h3>Personal information</h3>
+
+      <h4>Full Name</h4>
+      <div class="inputs-container">
+        <div class="form-input-vertical">
+          <label for="first-name">First Name</label>
+          <input
+            type="text"
+            name="first-name"
+            id="first-name"
+            required
+          >
+        </div>
+        <div class="form-input-vertical">
+          <label for="last-name">Last Name</label>
+          <input
+            type="text"
+            name="last-name"
+            id="last-name"
+            required
+          >
+        </div>
+      </div>
+
+      <h4>Contact Information</h4>
+      <div class="inputs-container">
+        <div class="form-input-vertical">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="example@email.com"
+            required
+          >
+        </div>
+        <div class="form-input-vertical">
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            placeholder="070-123 45 67"
+            pattern="[0-9]{3}-[0-9]{3} [0-9]{2} [0-9]{2}"
+          >
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- Rental details: date, time, unicorn, special requests -->
+      <h3>Rental Details</h3>
+
+      <h4>Booking Date and Time</h4>
+      <div class="inputs-container">
+        <div class="form-input-horizontal">
+          <label for="date">Date</label>
+          <input
+            type="date"
+            name="date"
+            id="date"
+          >
+          <span>
+            <input
+              type="checkbox"
+              name="full-day"
+              id="full-day"
+            >
+            <label for="full-day">Full day</label>
+          </span>
+        </div>
+        <div class="form-input-horizontal">
+          <span>
+            <label for="start-time">from</label>
+            <input
+              type="time"
+              name="time"
+              id="time"
+            >
+          </span>
+          <span>
+            <label for="end-time">to</label>
+            <input
+              type="time"
+              name="time"
+              id="time"
+            >
+          </span>
+        </div>
+      </div>
+
+      <h4>Unicorn</h4>
+      <div class="inputs-container">
+        <div class="form-input-vertical">
+          <label for="unicorn">Select your Unicorn</label>
+          <select
+            name="unicorn"
+            id="unicorn"
+          >
+            <option value="1">Starlight Sparkle</option>
+            <option value="2">Rainbow Dream</option>
+            <option value="3">Moonshadow</option>
+            <option value="4">Aurora Mist</option>
+            <option value="5">Whisperwind</option>
+            <option value="6">Sunshine Glow</option>
+            <option value="7">Midnight Mirage</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="inputs-container">
+        <div class="form-input-vertical">
+          <label for="special-requests">
+            Special Requests
+          </label>
+          <input
+            type="text"
+            name="special-requests"
+            id="special-requests"
+          >
+        </div>
+      </div>
+
+      <p>Do you want to add unicorn-themed party accessories?</p>
+      <div class="inputs-container">
+        <div class="form-input-horizontal">
+          <input
+            type="radio"
+            name="add-on"
+            id="extra-yes"
+            value="Yes"
+          >
+          <label for="extra-yes">Yes</label>
+          <input
+            type="radio"
+            name="add-on"
+            id="extra-no"
+            value="No"
+          >
+          <label for="extra-no">No</label>
+        </div>
+      </div>
+
+      <!-- Booking confirmation -->
+      <h3>Confirmation</h3>
+      <div class="inputs-container">
+        <div class="form-input-horizontal">
+          <input
+            type="checkbox"
+            name="agreement"
+            id="agreement"
+          >
+          <label for="agreement">Agree on our terms and conditions.</label>
+        </div>
+      </div>
+
+      <button type="submit">Submit</button>
+
+    </form>
 
   </section>
 
