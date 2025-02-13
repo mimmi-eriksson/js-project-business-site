@@ -13,7 +13,7 @@
   >
   <link
     rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Sofia|Comic+Neue|Galada|Montserrat"
+    href="https://fonts.googleapis.com/css?family=Sofia|Galada|Montserrat|Figtree"
   >
   <title>Starlight Unicorn Rentals</title>
 </head>
@@ -56,7 +56,7 @@
     </div>
   </header>
 
-  <!--Main section-->
+  <!-- Main section ----------------------------------------->
   <div class="section-heading">
     <h2>Our Unicorns</h2>
     <hr>
@@ -65,7 +65,7 @@
   <section class="main-section">
 
     <!--Unicorn of the month text-->
-    <h2 class="monthly-unicorn-text">* Unicorn of the Month *</h2>
+    <h2 class="monthly-unicorn-text">⭐ Unicorn of the Month ⭐</h2>
 
     <!-- Cards container -->
     <article class="cards-container">
@@ -118,7 +118,7 @@
             <!--Mane & Tail-->
             <div class="stat mane-tail">
               <!--stat icon-->
-              <p class="icon">&#10024</p>
+              <p class="icon">🦄</p>
               <!--stat name-->
               <h3>Mane & Tail:</h3>
               <!--Rating-->
@@ -212,7 +212,7 @@
             <!--Mane & Tail-->
             <div class="stat mane-tail">
               <!--stat icon-->
-              <p class="icon">&#10024</p>
+              <p class="icon">🦄</p>
               <!--stat name-->
               <h3>Mane & Tail:</h3>
               <!--Rating-->
@@ -305,7 +305,7 @@
             <!--Mane & Tail-->
             <div class="stat mane-tail">
               <!--stat icon-->
-              <p class="icon">&#10024</p>
+              <p class="icon">🦄</p>
               <!--stat name-->
               <h3>Mane & Tail:</h3>
               <!--Rating-->
@@ -397,7 +397,7 @@
             <!--Mane & Tail-->
             <div class="stat mane-tail">
               <!--stat icon-->
-              <p class="icon">&#10024</p>
+              <p class="icon">🦄</p>
               <!--stat name-->
               <h3>Mane & Tail:</h3>
               <!--Rating-->
@@ -490,7 +490,7 @@
             <!--Mane & Tail-->
             <div class="stat mane-tail">
               <!--stat icon-->
-              <p class="icon">&#10024</p>
+              <p class="icon">🦄</p>
               <!--stat name-->
               <h3>Mane & Tail:</h3>
               <!--Rating-->
@@ -582,7 +582,7 @@
             <!--Mane & Tail-->
             <div class="stat mane-tail">
               <!--stat icon-->
-              <p class="icon">&#10024</p>
+              <p class="icon">🦄</p>
               <!--stat name-->
               <h3>Mane & Tail:</h3>
               <!--Rating-->
@@ -676,7 +676,7 @@
             <!--Mane & Tail-->
             <div class="stat mane-tail">
               <!--stat icon-->
-              <p class="icon">&#10024</p>
+              <p class="icon">🦄</p>
               <!--stat name-->
               <h3>Mane & Tail:</h3>
               <!--Rating-->
@@ -726,7 +726,7 @@
 
   </section>
 
-  <!-- Booking form section -->
+  <!-- Booking form section ------------------------------>
 
   <div class="section-heading">
     <h2>Book a Unicorn</h2>
@@ -740,169 +740,174 @@
       method="POST"
     >
       <!-- Personal info: Name, email, phone number-->
-      <h3>Personal information</h3>
+      <fieldset class="personal-info">
+        <legend>Personal information</legend>
 
-      <h4>Full Name</h4>
-      <div class="inputs-container">
-        <div class="form-input-vertical">
-          <label for="first-name">First Name</label>
-          <input
-            type="text"
-            name="first-name"
-            id="first-name"
-            required
-          >
+        <div class="full-name-wrapper">
+          <h3>Full Name</h3>
+          <div class="wrapper-column">
+            <input
+              type="text"
+              name="first-name"
+              id="first-name"
+              required
+            >
+            <label for="first-name">First Name</label>
+          </div>
+          <div class="wrapper-column">
+            <input
+              type="text"
+              name="last-name"
+              id="last-name"
+              required
+            >
+            <label for="last-name">Last Name</label>
+          </div>
         </div>
-        <div class="form-input-vertical">
-          <label for="last-name">Last Name</label>
-          <input
-            type="text"
-            name="last-name"
-            id="last-name"
-            required
-          >
-        </div>
-      </div>
 
-      <h4>Contact Information</h4>
-      <div class="inputs-container">
-        <div class="form-input-vertical">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="example@email.com"
-            required
-          >
+        <div class="contact-info-wrapper">
+          <h3>Contact Information</h3>
+          <div class="wrapper-column">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="example@email.com"
+              required
+            >
+            <label for="email">Email</label>
+          </div>
+          <div class="wrapper-column">
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder="070-123 45 67"
+              pattern="[0-9]{3}-[0-9]{3} [0-9]{2} [0-9]{2}"
+            >
+            <label for="phone">Phone Number</label>
+          </div>
         </div>
-        <div class="form-input-vertical">
-          <label for="phone">Phone Number</label>
-          <input
-            type="tel"
-            name="phone"
-            id="phone"
-            placeholder="070-123 45 67"
-            pattern="[0-9]{3}-[0-9]{3} [0-9]{2} [0-9]{2}"
-          >
-        </div>
-      </div>
-
-      <hr>
+      </fieldset>
 
       <!-- Rental details: date, time, unicorn, special requests -->
-      <h3>Rental Details</h3>
+      <fieldset class="rental-details">
+        <legend>Rental Details</legend>
 
-      <h4>Booking Date and Time</h4>
-      <div class="inputs-container">
-        <div class="form-input-horizontal">
-          <label for="date">Date</label>
-          <input
-            type="date"
-            name="date"
-            id="date"
-          >
-          <span>
-            <input
-              type="checkbox"
-              name="full-day"
-              id="full-day"
-            >
-            <label for="full-day">Full day</label>
-          </span>
-        </div>
-        <div class="form-input-horizontal">
-          <span>
-            <label for="start-time">from</label>
-            <input
-              type="time"
-              name="time"
-              id="time"
-            >
-          </span>
-          <span>
-            <label for="end-time">to</label>
-            <input
-              type="time"
-              name="time"
-              id="time"
-            >
-          </span>
-        </div>
-      </div>
-
-      <h4>Unicorn</h4>
-      <div class="inputs-container">
-        <div class="form-input-vertical">
-          <label for="unicorn">Select your Unicorn</label>
+        <div class="unicorn-wrapper">
+          <label for="unicorn">Select your preferred unicorn</label>
           <select
             name="unicorn"
             id="unicorn"
           >
-            <option value="1">Starlight Sparkle</option>
-            <option value="2">Rainbow Dream</option>
-            <option value="3">Moonshadow</option>
-            <option value="4">Aurora Mist</option>
-            <option value="5">Whisperwind</option>
-            <option value="6">Sunshine Glow</option>
-            <option value="7">Midnight Mirage</option>
+            <option value="starlight-sparkle">Starlight Sparkle</option>
+            <option value="rainbow-dream">Rainbow Dream</option>
+            <option value="moonshadow">Moonshadow</option>
+            <option value="auora-mist">Aurora Mist</option>
+            <option value="whisperwind">Whisperwind</option>
+            <option value="sunshine-glow">Sunshine Glow</option>
+            <option value="midnight-mirage">Midnight Mirage</option>
           </select>
         </div>
-      </div>
 
-      <div class="inputs-container">
-        <div class="form-input-vertical">
-          <label for="special-requests">
-            Special Requests
-          </label>
+        <div class="date-time-wrapper">
+          <h3>Booking date and time</h3>
+
+          <div class="date-wrapper">
+            <div class="wrapper-column">
+              <label for="date">Date</label>
+              <input
+                type="date"
+                name="date"
+                id="date"
+                required
+              >
+            </div>
+          </div>
+
+          <div class="time-wrapper">
+            <span>
+              <label for="start-time">from</label>
+              <input
+                type="time"
+                name="start-time"
+                id="start-time"
+                placeholder="HH:MM"
+              >
+            </span>
+            <span>
+              <label for="end-time">to</label>
+              <input
+                type="time"
+                name="end-time"
+                id="end-time"
+              >
+            </span>
+            <div class="checkbox-wrapper">
+              <input
+                type="checkbox"
+                name="full-day"
+                id="full-day"
+              >
+              <label for="full-day">Full day</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="special-requests-wrapper">
+          <label for="special-requests">Special Requests</label>
           <input
             type="text"
             name="special-requests"
             id="special-requests"
           >
         </div>
-      </div>
 
-      <p>Do you want to add unicorn-themed party accessories?</p>
-      <div class="inputs-container">
-        <div class="form-input-horizontal">
-          <input
-            type="radio"
-            name="add-on"
-            id="extra-yes"
-            value="Yes"
-          >
-          <label for="extra-yes">Yes</label>
-          <input
-            type="radio"
-            name="add-on"
-            id="extra-no"
-            value="No"
-          >
-          <label for="extra-no">No</label>
+        <div class="add-on-wrapper">
+          <p>Do you want to add unicorn-themed party accessories?</p>
+          <div class="wrapper-row">
+            <label class="radiobutton-wrapper">
+              <input
+                type="radio"
+                name="add-on"
+                value="yes"
+                checked
+              >
+              Yes
+            </label>
+            <label class="radiobutton-wrapper">
+              <input
+                type="radio"
+                name="add-on"
+                value="no"
+              >
+              No
+            </label>
+          </div>
         </div>
-      </div>
+      </fieldset>
 
       <!-- Booking confirmation -->
-      <h3>Confirmation</h3>
-      <div class="inputs-container">
-        <div class="form-input-horizontal">
+      <fieldset class="confirmation">
+        <legend>Confirmation</legend>
+
+        <div class="checkbox-wrapper">
           <input
             type="checkbox"
             name="agreement"
             id="agreement"
+            required
           >
           <label for="agreement">Agree on our terms and conditions.</label>
         </div>
-      </div>
 
-      <button type="submit">Submit</button>
+        <button type="submit">Submit</button>
+      </fieldset>
 
     </form>
-
   </section>
 
-  <!--Footer-->
+  <!-- Footer --------------------------------------->
   <footer>
     <p>Created by Mimmi Eriksson</p>
   </footer>

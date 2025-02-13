@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Comic Neue", sans-serif;
+  font-family: "Figtree", sans-serif;
   background: #f6f2f9;
 }
 
@@ -90,7 +90,7 @@ header h1 {
 }
 
 header h2 {
-  font-size: 2.5vh;
+  font-size: 2.3vh;
   font-weight: 200;
 }
 
@@ -132,7 +132,7 @@ header h2 {
   margin: 0;
   color: #F53B98;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 800;
 }
 
@@ -154,7 +154,7 @@ header h2 {
   gap: 25px;
   box-sizing: border-box;
   background: #FFFFFF;
-  box-shadow: 5px 5px 5px #d8b3d6;
+  box-shadow: 0 0 15px 2px #d8b3d6;
   padding: 30px 40px;
   border-radius: 15px;
 }
@@ -234,6 +234,7 @@ figcaption {
 /* Change color of button on hover */
 .card .button:hover {
   background: #c49dd3;
+  box-shadow: 0 0 10px 1px silver;
 }
 
 /* Button text styling */
@@ -299,72 +300,163 @@ figcaption {
 
 form {
   background: #fff;
-  border: 1px solid #F53B98;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 2px #d8b3d6;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   padding: 30px;
   margin: 40px;
-
 }
 
-.inputs-container {
+fieldset {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+  margin: 0;
+  border-radius: 5px;
+  border: 1px solid #c49dd3;
 }
 
-.form-input-vertical {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-
+fieldset:hover {
+  border: 1px solid #7a2f97;
 }
 
-.form-input-horizontal {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-}
-
-
-.form-input-horizontal span {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-}
-
-.form-section h3,
-h4,
-h5 {
-  margin-bottom: 0;
-}
-
-.form-section h3 {
+legend {
   text-transform: uppercase;
-  font-size: 16px;
-  font-weight: 600;
-  margin-top: 20px;
-}
-
-.form-section h4 {
   font-size: 14px;
   font-weight: 600;
-  margin-top: 10px;
+  color: #130d3b;
+}
+
+.wrapper-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2px
+}
+
+.wrapper-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+form h3,
+form p {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 label {
   font-size: 12px;
 }
 
-.form-section p {
-  margin: 0;
-  font-size: 12px;
+input,
+select {
+  height: 25px;
+  padding-left: 5px;
+  border: 1px solid #d8b3d6;
+  border-radius: 5px;
 }
 
+input:hover,
+select:hover {
+  border: 1px solid #F53B98;
+}
 
+input:focus,
+select:focus {
+  background-color: #f7e5f2;
+  outline: 1.5px solid #F53B98
+}
+
+input[type=checkbox],
+input[type=radio] {
+  height: 15px;
+  width: 15px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.full-name-wrapper,
+.contact-info-wrapper,
+.unicorn-wrapper,
+.date-time-wrapper,
+.special-requests-wrapper,
+.add-on-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.unicorn-wrapper,
+.special-requests-wrapper label {
+  font-weight: 600;
+}
+
+.date-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.time-wrapper {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.time-wrapper span {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.time-wrapper span label {
+  width: 25px;
+}
+
+input[type="time"],
+input[type="date"] {
+  flex-grow: 1;
+}
+
+.radiobutton-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+button {
+  width: 150px;
+  height: 40px;
+  align-self: center;
+  background: #f5c7e9;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f39adb;
+  box-shadow: 0 0 15px 2px #d8b3d6;
+}
 
 
 /* FOOTER----------------------------------- */
@@ -421,6 +513,11 @@ footer p {
     font-size: 12px;
   }
 
+  form {
+    margin: 25px;
+    padding: 20px;
+  }
+
 }
 
 /* Tablets */
@@ -440,10 +537,8 @@ footer p {
   }
 
   /* change flex directions in booking form */
-  .inputs-container {
+  .personal-info {
     flex-direction: row;
-    gap: 20px;
-
   }
 
 }
@@ -503,6 +598,21 @@ footer p {
 
   .nav-links a:hover {
     background: #8AB6D6;
+  }
+
+  /* change flex direction in booking form */
+  form {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .personal-info,
+  .rental-details {
+    width: 40%;
+  }
+
+  .personal-info {
+    flex-direction: column;
   }
 
 }
