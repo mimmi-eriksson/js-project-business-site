@@ -4,7 +4,7 @@ body {
   background: #f6f2f9;
 }
 
-/* HEADER-------------------------- */
+/* HEADER ----------------------------- */
 
 /* Navigation bar */
 .nav-bar {
@@ -14,7 +14,6 @@ body {
   /* Keep navbar on top when scrolling down */
   position: sticky;
   top: 0;
-  /* background: #2C3E50; */
   background: #130d3b;
   color: #FFFFFF;
   height: 10vh;
@@ -62,7 +61,7 @@ body {
   border-radius: 5px;
 }
 
-/* Hero image */
+/* Header with hero image */
 header {
   /* Hero image with a linear gradient to make it a little darker */
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./assets/hero-image.jpg);
@@ -78,7 +77,7 @@ header {
 
 header div {
   width: 80%;
-  max-width: 1000px;
+  max-width: 900px;
   text-align: center;
 }
 
@@ -90,15 +89,16 @@ header h1 {
 }
 
 header h2 {
-  font-size: 2.3vh;
+  font-size: 2.2vh;
   font-weight: 200;
+  margin-top: 8vh;
 }
 
-/* Main section----------------------------- */
+/* Main section --------------------------------- */
 
 /* Style setion heading */
 .section-heading {
-  margin: 10vh auto 5vh auto;
+  margin: 8vh auto 5vh auto;
   max-width: 1200px;
 }
 
@@ -129,10 +129,10 @@ header h2 {
 .monthly-unicorn-text {
   align-self: flex-start;
   padding: 0 50px;
-  margin: 0;
+  margin: 10px 0;
   color: #F53B98;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 800;
 }
 
@@ -159,7 +159,6 @@ header h2 {
   border-radius: 15px;
 }
 
-/* Figure */
 figure {
   margin: 0;
 }
@@ -191,7 +190,7 @@ figcaption {
   font-weight: 500;
 }
 
-/* Hide the unicorn descriptions*/
+/* Hide the unicorn descriptions */
 .card .description {
   display: none;
 }
@@ -220,7 +219,7 @@ figcaption {
   display: none;
 }
 
-/* Button styling*/
+/* Button styling */
 .card .button {
   background: #fce044;
   text-align: center;
@@ -249,9 +248,9 @@ figcaption {
   display: none;
 }
 
-/* UNICORN OF THE MONTH ---------------------------*/
+/* UNICORN OF THE MONTH ----------------------------------*/
 
-/* Place the monthly unicorn card first in the grid*/
+/* Place the monthly unicorn card first in the grid */
 .monthly-unicorn {
   grid-row: 1/2;
 }
@@ -290,25 +289,29 @@ figcaption {
   display: initial;
 }
 
-/* BOOKING FORM------------------------------ */
+/* BOOKING FORM ------------------------------------ */
 
 .form-section {
   margin: 0 auto;
   font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
   max-width: 1000px;
 }
 
+/* flexbox on the form element */
 form {
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 15px 2px #d8b3d6;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  background: #fff;
+  border-radius: 5px;
+  /* adding a box shaddow for a glow effect */
+  box-shadow: 0 0 15px 2px #d8b3d6;
   padding: 30px;
   margin: 40px;
 }
 
+/* fieldset styling */
 fieldset {
   flex-grow: 1;
   display: flex;
@@ -321,6 +324,7 @@ fieldset {
   border: 1px solid #c49dd3;
 }
 
+/* change border color of the fieldset on hover */
 fieldset:hover {
   border: 1px solid #7a2f97;
 }
@@ -332,6 +336,7 @@ legend {
   color: #130d3b;
 }
 
+/* style the column and row wrappers */
 .wrapper-column {
   display: flex;
   flex-direction: column;
@@ -345,6 +350,7 @@ legend {
   flex-wrap: wrap;
 }
 
+/* styling text elements in the form */
 form h3,
 form p {
   margin: 0;
@@ -356,6 +362,7 @@ label {
   font-size: 12px;
 }
 
+/* styling input fields and select field*/
 input,
 select {
   height: 25px;
@@ -364,17 +371,20 @@ select {
   border-radius: 5px;
 }
 
+/* change border color on hover */
 input:hover,
 select:hover {
   border: 1px solid #F53B98;
 }
 
+/* change background color and thicker border on focus */
 input:focus,
 select:focus {
   background-color: #f7e5f2;
   outline: 1.5px solid #F53B98
 }
 
+/* styling checkboxes and radiobuttons */
 input[type=checkbox],
 input[type=radio] {
   height: 15px;
@@ -383,6 +393,7 @@ input[type=radio] {
   cursor: pointer;
 }
 
+/* styling the different parts in the fieldsets */
 .full-name-wrapper,
 .contact-info-wrapper,
 .unicorn-wrapper,
@@ -441,6 +452,7 @@ input[type="date"] {
   gap: 5px;
 }
 
+/* styling the submit button */
 button {
   width: 150px;
   height: 40px;
@@ -453,9 +465,10 @@ button {
   cursor: pointer;
 }
 
+/* change color and add a glow effect on hover */
 button:hover {
   background: #f39adb;
-  box-shadow: 0 0 15px 2px #d8b3d6;
+  box-shadow: 0 0 15px 1px #d8b3d6;
 }
 
 
@@ -536,7 +549,7 @@ footer p {
     font-size: 16px;
   }
 
-  /* change flex directions in booking form */
+  /* change flex direction in booking form */
   .personal-info {
     flex-direction: row;
   }
