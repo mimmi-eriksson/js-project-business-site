@@ -96,10 +96,19 @@ header h2 {
 
 /* Main section --------------------------------- */
 
-/* Style setion heading */
-.section-heading {
-  margin: 8vh auto 5vh auto;
+/* flexbox on the main section */
+.main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 1200px;
+  margin: 5vh auto 8vh auto;
+}
+
+/* Style setion headings */
+.section-heading {
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 .section-heading h2 {
@@ -116,26 +125,6 @@ header h2 {
   margin: 10px 40px;
 }
 
-/* flexbox on the main section */
-.main-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  max-width: 1200px;
-  margin: 5vh auto 8vh auto;
-}
-
-.monthly-unicorn-text {
-  align-self: flex-start;
-  padding: 0 50px;
-  margin: 10px 0;
-  color: #F53B98;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 17px;
-  font-weight: 800;
-}
-
 /* CSS grid on cards container */
 .cards-container {
   display: grid;
@@ -147,7 +136,7 @@ header h2 {
 }
 
 /* Each card is a flexbox */
-.card {
+.unicorn-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -168,11 +157,6 @@ img {
   width: 100%;
 }
 
-/* Hide figcaption */
-figcaption {
-  display: none;
-}
-
 /* Container with info is a flexbox */
 .info-container {
   display: flex;
@@ -182,7 +166,7 @@ figcaption {
 }
 
 /* Card heading - unicorn name */
-.card h2 {
+.unicorn-card h2 {
   margin: 0;
   font-family: "Galada", sans-serif;
   color: #4e036e;
@@ -191,7 +175,7 @@ figcaption {
 }
 
 /* Hide the unicorn descriptions */
-.card .description {
+.unicorn-card .description {
   display: none;
 }
 
@@ -220,43 +204,46 @@ figcaption {
 }
 
 /* Button styling */
-.card .button {
+.unicorn-card .button {
   background: #fce044;
-  text-align: center;
-  text-decoration: none;
   color: black;
+  border: none;
   margin: 20px 40px 0 40px;
   padding: 10px;
   border-radius: 30px;
+  font-family: "Figtree", sans-serif;
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button a {
+  text-decoration: none;
+  color: black;
 }
 
 /* Change color of button on hover */
-.card .button:hover {
+.unicorn-card .button:hover {
   background: #c49dd3;
   box-shadow: 0 0 10px 1px silver;
 }
 
-/* Button text styling */
-.card .button p {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 600;
-}
-
 /* Only display the 'Learn more'-button (hide the 'Book now'-button */
-.card .button-book {
+.unicorn-card .button-book {
   display: none;
 }
 
-/* UNICORN OF THE MONTH ----------------------------------*/
+/* FEATURED UNICORN ----------------------------------*/
 
-/* Place the monthly unicorn card first in the grid */
-.monthly-unicorn {
+/* Place the featured unicorn card first in the grid */
+.featured-unicorn {
   grid-row: 1/2;
 }
 
 /* Show the description */
-.monthly-unicorn .description {
+.featured-unicorn .description {
   display: initial;
   margin: 0;
   text-align: justify;
@@ -264,38 +251,41 @@ figcaption {
 }
 
 /* adjusting gap size on information container */
-.monthly-unicorn .info-container {
+.featured-unicorn .info-container {
   gap: 10px;
 }
 
 /* Change flex direction for the stat container */
-.monthly-unicorn .stats-container {
+.featured-unicorn .stats-container {
   flex-direction: column;
 }
 
 /* Show the stat headings */
-.monthly-unicorn .stat h3 {
+.featured-unicorn .stat h3 {
   display: initial;
   margin: 0;
   font-size: 14px;
 }
 
 /* Only display button text 'Book now' */
-.monthly-unicorn .button-more-info {
+.featured-unicorn .button-more-info {
   display: none;
 }
 
-.monthly-unicorn .button-book {
+.featured-unicorn .button-book {
   display: initial;
 }
 
 /* BOOKING FORM ------------------------------------ */
 
 .form-section {
-  margin: 0 auto;
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
-  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 5vh auto 8vh auto;
 }
 
 /* flexbox on the form element */
@@ -308,7 +298,7 @@ form {
   /* adding a box shaddow for a glow effect */
   box-shadow: 0 0 15px 2px #d8b3d6;
   padding: 30px;
-  margin: 40px;
+  margin: 0 40px;
 }
 
 /* fieldset styling */
@@ -453,7 +443,7 @@ input[type="date"] {
 }
 
 /* styling the submit button */
-button {
+#submit-button {
   width: 150px;
   height: 40px;
   align-self: center;
@@ -466,7 +456,7 @@ button {
 }
 
 /* change color and add a glow effect on hover */
-button:hover {
+#submit-button:hover {
   background: #f39adb;
   box-shadow: 0 0 15px 1px #d8b3d6;
 }
@@ -499,30 +489,25 @@ footer p {
     padding-right: 0;
   }
 
-  .card {
+  .unicorn-card {
     max-width: 260px;
   }
 
   /* decrease font sizes of the cards */
 
-  .monthly-unicorn-text {
-    font-size: 16px;
-    padding: 0 40px;
-  }
-
-  .card .description {
+  .unicorn-card .description {
     font-size: 12px;
   }
 
-  .card .stat p {
+  .unicorn-card .stat p {
     font-size: 12px;
   }
 
-  .card .stat h3 {
+  .unicorn-card .stat h3 {
     font-size: 12px;
   }
 
-  .card .button p {
+  .unicorn-card .button {
     font-size: 12px;
   }
 
@@ -537,15 +522,15 @@ footer p {
 
 @media (min-width: 660px) {
 
-  /* For the monthly unicorn, span card overall columns and change flex direction*/
-  .monthly-unicorn {
+  /* For the featured unicorn, span card overall columns and change flex direction*/
+  .featured-unicorn {
     flex-direction: row;
     grid-column: 1/-1;
     max-width: fit-content;
   }
 
   /* Increase button font size */
-  .monthly-unicorn .button-book {
+  .featured-unicorn .button-book {
     font-size: 16px;
   }
 
@@ -560,29 +545,29 @@ footer p {
 
 @media (min-width: 900px) {
 
-  /* Adjust monthly unicorn card*/
-  .monthly-unicorn {
+  /* Adjust featured unicorn card*/
+  .featured-unicorn {
     padding: 40px;
     gap: 40px;
   }
 
-  .monthly-unicorn h2 {
+  .featured-unicorn h2 {
     font-size: 28px;
   }
 
-  .monthly-unicorn .info-container {
+  .featured-unicorn .info-container {
     gap: 20px;
   }
 
-  .monthly-unicorn .stat h3 {
+  .featured-unicorn .stat h3 {
     font-size: 16px;
   }
 
-  .monthly-unicorn .stat p {
+  .featured-unicorn .stat p {
     font-size: 16px;
   }
 
-  .monthly-unicorn .description {
+  .featured-unicorn .description {
     font-size: 18px;
   }
 

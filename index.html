@@ -18,7 +18,8 @@
   <title>Starlight Unicorn Rentals</title>
 </head>
 
-<body>
+<body onload="changeFeaturedUnicorn('starlight-sparkle'
+  )">
 
   <!-- Header ----------------------------------------------->
 
@@ -26,7 +27,11 @@
   <nav class="nav-bar">
     <!--Logo-->
     <div class="nav-logo">
-      <a href="#"><img
+      <a
+        href="#"
+        onclick="changeFeaturedUnicorn('starlight-sparkle'
+      )"
+      ><img
           class="logo-icon"
           src="./assets/unicorn-icon.png"
           alt="Unicorn logo"
@@ -35,9 +40,16 @@
     </div>
     <!--Links-->
     <div class="nav-links">
-      <a href="#">Home</a>
-      <a href="#">Book a Unicorn</a>
-      <a href="#">Gallery</a>
+      <a
+        href="#"
+        onclick="changeFeaturedUnicorn('starlight-sparkle'
+      )"
+      >Home</a>
+      <a href="#booking-section">Book a Unicorn</a>
+      <a
+        href="#gallery-section"
+        onclick="changeFeaturedUnicorn()"
+      >Gallery</a>
       <a href="#">About us</a>
       <a href="#">Contact</a>
     </div>
@@ -59,25 +71,27 @@
   </header>
 
   <!-- Main section ----------------------------------------->
-  <div class="section-heading">
-    <h2>Our Unicorns</h2>
-    <hr>
-  </div>
+  <section
+    class="main-section"
+    id="gallery-section"
+  >
 
-  <section class="main-section">
-
-    <!--Unicorn of the month text-->
-    <h2 class="monthly-unicorn-text">⭐ Unicorn of the Month ⭐</h2>
+    <div class="section-heading">
+      <h2>Our Unicorns</h2>
+      <hr>
+    </div>
 
     <!-- Cards container -->
     <article class="cards-container">
 
-      <!--CARD CONTAINER 1-->
-      <article class="card monthly-unicorn">
+      <!--Card 1-->
+      <article
+        id="starlight-sparkle"
+        class="unicorn-card"
+      >
 
         <!--Image-->
         <figure>
-          <figcaption>Starlight Sparkle</figcaption>
           <img
             src="./assets/starlight-sparkle.png"
             alt="Image of Starlight Sparkle"
@@ -151,28 +165,30 @@
           <!--Buttons-->
           <a
             class="button button-book"
-            href="https://en.wikipedia.org/wiki/Unicorn"
-            target="_blank"
+            href="#booking-section"
           >
-            <p>Book Now</p>
+            Book Now
           </a>
-          <a
+          <button
+            id="button-info-starlight-sparkle"
             class="button button-more-info"
-            href="#"
+            onclick=showInfo(this.id)
           >
-            <p>Learn More</p>
-          </a>
+            <a href="#gallery-section">Learn More</a>
+          </button>
 
         </div>
 
       </article>
 
-      <!--CARD CONTAINER 2-->
-      <article class="card">
+      <!--Card 2-->
+      <article
+        id="rainbow-dream"
+        class="unicorn-card"
+      >
 
         <!--Image-->
         <figure>
-          <figcaption>Rainbow Dream</figcaption>
           <img
             src="./assets/rainbow-dream.png"
             alt="Image of Rainbow Dream"
@@ -245,27 +261,30 @@
           <!--Button-->
           <a
             class="button button-book"
-            href="#"
+            href="#booking-section"
           >
-            <p>Book Now</p>
+            Book Now
           </a>
-          <a
+          <button
+            id="button-info-rainbow-dream"
             class="button button-more-info"
-            href="#"
+            onclick=showInfo(this.id)
           >
-            <p>Learn More</p>
-          </a>
+            <a href="#gallery-section">Learn More</a>
+          </button>
 
         </div>
 
       </article>
 
-      <!--CARD CONTAINER 3-->
-      <article class="card">
+      <!--Card 3-->
+      <article
+        id="moonshadow"
+        class="unicorn-card"
+      >
 
         <!--Image-->
         <figure>
-          <figcaption>Moonshadow</figcaption>
           <img
             src="./assets/moonshadow.png"
             alt="Moonshadow"
@@ -337,27 +356,30 @@
 
           <a
             class="button button-book"
-            href="#"
+            href="#booking-section"
           >
-            <p>Book Now</p>
+            Book Now
           </a>
-          <a
+          <button
+            id="info-button-moonshadow"
             class="button button-more-info"
-            href="#"
+            onclick=showInfo(this.id)
           >
-            <p>Learn More</p>
-          </a>
+            <a href="#gallery-section">Learn More</a>
+          </button>
 
         </div>
 
       </article>
 
-      <!--CARD CONTAINER 4-->
-      <article class="card">
+      <!--Card 4-->
+      <article
+        id="aurora-mist"
+        class="unicorn-card"
+      >
 
         <!--Image-->
         <figure>
-          <figcaption>Aurora Mist</figcaption>
           <img
             src="./assets/auora-mist.png"
             alt="Aurora Mist"
@@ -430,27 +452,30 @@
           <!--Buttons-->
           <a
             class="button button-book"
-            href="#"
+            href="#booking-section"
           >
-            <p>Book Now</p>
+            Book Now
           </a>
-          <a
+          <button
+            id="button-info-aurora-mist"
             class="button button-more-info"
-            href="#"
+            onclick=showInfo(this.id)
           >
-            <p>Learn More</p>
-          </a>
+            <a href="#gallery-section">Learn More</a>
+          </button>
 
         </div>
 
       </article>
 
-      <!--CARD CONTAINER 5-->
-      <article class="card">
+      <!--Card 5-->
+      <article
+        id="whisperwind"
+        class="unicorn-card"
+      >
 
         <!--Image-->
         <figure>
-          <figcaption>Whisperwind</figcaption>
           <img
             src="./assets/whisperwind.png"
             alt="Whisperwind"
@@ -523,27 +548,30 @@
           <!--Button-->
           <a
             class="button button-book"
-            href="#"
+            href="#booking-section"
           >
-            <p>Book Now</p>
+            Book Now
           </a>
-          <a
+          <button
+            id="button-info-whisperwind"
             class="button button-more-info"
-            href="#"
+            onclick=showInfo(this.id)
           >
-            <p>Learn More</p>
-          </a>
+            <a href="#gallery-section">Learn More</a>
+          </button>
 
         </div>
 
       </article>
 
-      <!--CARD CONTAINER 6-->
-      <article class="card">
+      <!--Card 6-->
+      <article
+        id="sunshine-glow"
+        class="unicorn-card"
+      >
 
         <!--Image-->
         <figure>
-          <figcaption>Sunshine Glow</figcaption>
           <img
             src="./assets/sunshine-glow.png"
             alt="Sunshine Glow"
@@ -615,27 +643,30 @@
           <!--Button-->
           <a
             class="button button-book"
-            href="#"
+            href="#booking-section"
           >
-            <p>Book Now</p>
+            Book Now
           </a>
-          <a
+          <button
+            id="button-info-sunshine-glow"
             class="button button-more-info"
-            href="#"
+            onclick=showInfo(this.id)
           >
-            <p>Learn More</p>
-          </a>
+            <a href="#gallery-section">Learn More</a>
+          </button>
 
         </div>
 
       </article>
 
-      <!--CARD CONTAINER 7-->
-      <article class="card">
+      <!--Card 7-->
+      <article
+        id="midnight-mirage"
+        class="unicorn-card"
+      >
 
         <!--Image-->
         <figure>
-          <figcaption>Midnight Mirage</figcaption>
           <img
             src="./assets/midnight-mirage.png"
             alt="Midnight Mirage"
@@ -709,16 +740,17 @@
           <!--Button-->
           <a
             class="button button-book"
-            href="#"
+            href="#booking-section"
           >
-            <p>Book Now</p>
+            Book Now
           </a>
-          <a
+          <button
+            id="button-info-midnight-mirage"
             class="button button-more-info"
-            href="#"
+            onclick=showInfo(this.id)
           >
-            <p>Learn More</p>
-          </a>
+            <a href="#gallery-section">Learn More</a>
+          </button>
 
         </div>
 
@@ -729,13 +761,15 @@
   </section>
 
   <!-- Booking form section --------------------------------->
+  <section
+    class="form-section"
+    id="booking-section"
+  >
 
-  <div class="section-heading">
-    <h2>Book a Unicorn</h2>
-    <hr>
-  </div>
-
-  <section class="form-section">
+    <div class="section-heading">
+      <h2>Book a Unicorn</h2>
+      <hr>
+    </div>
 
     <form
       action="http://httpbin.org/anything"
@@ -903,7 +937,10 @@
           <label for="agreement">Agree on our terms and conditions.</label>
         </div>
 
-        <button type="submit">Submit</button>
+        <button
+          id="submit-button"
+          type="submit"
+        >Submit</button>
       </fieldset>
 
     </form>
@@ -913,6 +950,8 @@
   <footer>
     <p>Created by Mimmi Eriksson</p>
   </footer>
+
+  <script src="./script.js"></script>
 
 </body>
 
