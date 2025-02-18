@@ -5,8 +5,6 @@ const hamburger = document.getElementById("hamburger")
 const hamburgerIcon = document.querySelector(".hamburger-icon")
 const menuItems = document.querySelectorAll(".menu-item")
 
-console.log(menuItems)
-
 // function to toogle the hamburger menu
 const toggleMenu = () => {
   // if the menu is visible - hide the menu

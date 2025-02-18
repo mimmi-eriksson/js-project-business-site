@@ -12,11 +12,14 @@ body {
   justify-content: space-between;
   align-items: center;
   /* Keep navbar on top when scrolling down */
-  position: sticky;
+  position: fixed;
   top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
   background: #130d3b;
   color: #FFFFFF;
-  height: 10vh;
+  height: 60px;
   padding: 0 20px 0 5px;
 }
 
@@ -31,15 +34,15 @@ body {
 
 /* Logo icon */
 .logo-icon {
-  height: 7vh;
+  height: 40px;
 }
 
 /* Logo text */
 .nav-logo p {
   margin: 0;
-  width: 35vw;
+  width: 40vw;
   font-family: "Sofia", sans-serif;
-  font-size: 2.5vh;
+  font-size: 18px;
   line-height: 1.2;
 }
 
@@ -117,7 +120,6 @@ body {
 .closing-icon :nth-child(2) {
   background: #130d3b;
 }
-
 
 /* Header with hero image */
 header {
@@ -210,9 +212,22 @@ figure {
   margin: 0;
 }
 
-/* Size of image to fit the figure element*/
-img {
+/* adding a shimmering effect when hovering the image */
+.shimmering-image {
   width: 100%;
+  -webkit-mask-image: linear-gradient(45deg, #000 25%, rgba(0, 0, 0, .1) 50%, #000 75%);
+  mask-image: linear-gradient(45deg, #000 25%, rgba(0, 0, 0, .1) 50%, #000 75%);
+  -webkit-mask-size: 800%;
+  mask-size: 800%;
+  -webkit-mask-position: 0;
+  mask-position: 0;
+}
+
+.shimmering-image:hover {
+  transition: mask-position 2s ease, -webkit-mask-position 2s ease;
+  -webkit-mask-position: 120%;
+  mask-position: 120%;
+  opacity: 1;
 }
 
 /* Container with info is a flexbox */
@@ -618,15 +633,15 @@ footer p {
   }
 
   .featured-unicorn .stat h3 {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .featured-unicorn .stat p {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .featured-unicorn .description {
-    font-size: 18px;
+    font-size: 15px;
   }
 
 }
@@ -636,13 +651,20 @@ footer p {
 @media (min-width: 1024px) {
 
   /* Hide the hamburge icon */
-  #hamburger-icon {
+  #hamburger {
     display: none;
   }
 
   /*Show the links of the navigation bar*/
-  #nav-links {
-    display: flex;
+  .menu {
+    position: static;
+    flex-direction: row;
+    justify-content: space-between;
+    transform: none;
+    transition: none;
+    gap: 10px;
+    padding: 15px 0;
+    background: none;
   }
 
   /* change flex direction in booking form */
