@@ -13,11 +13,13 @@ body {
   align-items: center;
   /* Keep navbar on top when scrolling down */
   position: sticky;
-  top: 0;
+  top: 0px;
   background: #130d3b;
   color: #FFFFFF;
   height: 10vh;
+  padding: 0 20px 0 5px;
 }
+
 
 /* Logo */
 .nav-logo {
@@ -41,17 +43,46 @@ body {
   line-height: 1.2;
 }
 
-/* Hide the links in the navigation bar for mobile */
-.nav-links {
-  display: none;
+/* style the links in menu bar */
+.menu a {
+  text-decoration: none;
+  color: #FFFFFF;
+  padding: 3.8vh 1.2vw;
+  font-size: 2vh;
 }
 
-/* Hamburger icon */
+.menu a:hover {
+  background: #8AB6D6;
+}
+
+/* style the hamburger menu */
+.menu {
+  position: fixed;
+  /* to hide the menu by default above the screen */
+  transform: translateY(-110%);
+  /* to create a slideup/down effect */
+  transition: transform 0.3s;
+  top: 7vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #130d3b;
+  color: white;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5vh;
+  padding: 5vh 20px;
+}
+
+/* style the hamburger icon */
 .hamburger-icon {
   display: flex;
   flex-direction: column;
-  gap: 7px;
-  margin-right: 20px;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
 }
 
 .hamburger-icon div {
@@ -59,7 +90,34 @@ body {
   width: 40px;
   height: 4px;
   border-radius: 5px;
+  transition: transform 0.3s;
 }
+
+/* class to show the hamburger menu with javascript */
+.show-menu {
+  transform: translateY(0);
+}
+
+/* class to change the hamburger icon to a closing icon with javascript */
+/* rotate the first and third lines */
+.closing-icon :first-child,
+.closing-icon :last-child {
+  position: absolute;
+}
+
+.closing-icon :first-child {
+  transform: rotate(45deg);
+}
+
+.closing-icon :last-child {
+  transform: rotate(-45deg);
+}
+
+/* hide the second line */
+.closing-icon :nth-child(2) {
+  background: #130d3b;
+}
+
 
 /* Header with hero image */
 header {
@@ -578,24 +636,13 @@ footer p {
 @media (min-width: 1024px) {
 
   /* Hide the hamburge icon */
-  .hamburger-icon {
+  #hamburger-icon {
     display: none;
   }
 
-  /*Show and style the links of the navigation bar*/
-  .nav-links {
+  /*Show the links of the navigation bar*/
+  #nav-links {
     display: flex;
-  }
-
-  .nav-links a {
-    text-decoration: none;
-    color: #FFFFFF;
-    padding: 3.8vh 1.2vw;
-    font-size: 2vh;
-  }
-
-  .nav-links a:hover {
-    background: #8AB6D6;
   }
 
   /* change flex direction in booking form */

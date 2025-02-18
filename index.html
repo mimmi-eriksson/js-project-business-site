@@ -18,8 +18,7 @@
   <title>Starlight Unicorn Rentals</title>
 </head>
 
-<body onload="changeFeaturedUnicorn('starlight-sparkle'
-  )">
+<body onload="changeFeaturedUnicorn('starlight-sparkle')">
 
   <!-- Header ----------------------------------------------->
 
@@ -29,8 +28,7 @@
     <div class="nav-logo">
       <a
         href="#"
-        onclick="changeFeaturedUnicorn('starlight-sparkle'
-      )"
+        onclick="changeFeaturedUnicorn('starlight-sparkle')"
       ><img
           class="logo-icon"
           src="./assets/unicorn-icon.png"
@@ -39,25 +37,35 @@
       <p>Starlight Unicorn Rentals</p>
     </div>
     <!--Links-->
-    <div class="nav-links">
-      <a
-        href="#"
-        onclick="changeFeaturedUnicorn('starlight-sparkle'
+    <ul class="menu">
+      <li class="menu-item">
+        <a
+          href="#"
+          onclick="changeFeaturedUnicorn('starlight-sparkle'
       )"
-      >Home</a>
-      <a href="#booking-section">Book a Unicorn</a>
-      <a
-        href="#gallery-section"
-        onclick="changeFeaturedUnicorn()"
-      >Gallery</a>
-      <a href="#">About us</a>
-      <a href="#">Contact</a>
-    </div>
+        >Home</a>
+      </li>
+      <li class="menu-item"><a href="#booking-section">Book a Unicorn</a></li>
+      <li class="menu-item">
+        <a
+          href="#gallery-section"
+          onclick="changeFeaturedUnicorn()"
+        >Gallery</a>
+      </li>
+      <li class="menu-item"><a href="#">About us</a></li>
+      <li class="menu-item"><a href="#">Contact</a></li>
+    </ul>
     <!--Hamburger icon -->
-    <div class="hamburger-icon">
-      <div></div>
-      <div></div>
-      <div></div>
+    <div
+      id=hamburger
+      onclick="toggleMenu()"
+    >
+      <!-- menu icon -->
+      <div class="hamburger-icon">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   </nav>
 
