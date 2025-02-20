@@ -1,5 +1,5 @@
 // create variables
-let featuredUnicorn = ""
+let featuredUnicorn
 const menu = document.querySelector(".menu")
 const hamburger = document.getElementById("hamburger")
 const hamburgerIcon = document.querySelector(".hamburger-icon")
@@ -35,19 +35,14 @@ const changeFeaturedUnicorn = (unicornId) => {
 
 // function to get the unicorn element id in which a button ("more info" or "book now") was clicked
 const getUnicornId = (clicked) => {
-  // get id of the clicked button
-  const buttonId = clicked
   // get the unicorn element id of the unicorn which button was clicked
-  const unicornId = document.getElementById(buttonId).parentElement.parentElement.id
+  const unicornId = document.getElementById(clicked).parentElement.parentElement.id
   return unicornId
 }
 
 // function to change featured unicorn when more a info button is clicked
 const showInfo = (clicked) => {
-  // get id of the selected unicorn
-  const selectedUnicorn = getUnicornId(clicked)
-  // change the featurd unicorn
-  changeFeaturedUnicorn(selectedUnicorn)
+  changeFeaturedUnicorn(getUnicornId(clicked))
 }
 
 // function to change option in unicorn-select in booking form
@@ -57,9 +52,6 @@ const changeSelectedUnicorn = (optionValue) => {
 
 // function to change option in unicorn-select in booking form when a "book now" button is clicked
 const bookUnicorn = (clicked) => {
-  // get id of the selected unicorn
-  const selectedUnicorn = getUnicornId(clicked)
-  // change option in unicorn-select in booking form
-  changeSelectedUnicorn(selectedUnicorn)
+  changeSelectedUnicorn(getUnicornId(clicked))
 }
 
