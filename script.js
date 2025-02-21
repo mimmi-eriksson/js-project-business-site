@@ -5,6 +5,9 @@ const hamburger = document.getElementById("hamburger")
 const hamburgerIcon = document.querySelector(".hamburger-icon")
 const menuItems = document.querySelectorAll(".menu-item")
 const unicornSelect = document.getElementById("unicorn-select")
+const fullDayCheckBox = document.getElementById("full-day")
+const startTimeInput = document.getElementById("start-time")
+const endTimeInput = document.getElementById("end-time")
 
 // function to toogle the hamburger menu
 const toggleMenu = () => {
@@ -54,4 +57,21 @@ const changeSelectedUnicorn = (optionValue) => {
 const bookUnicorn = (clicked) => {
   changeSelectedUnicorn(getUnicornId(clicked))
 }
+
+// function to disable time inputs when "full day" is checked in booking form
+const toggleTimeInputs = () => {
+  // if checkbox is checked - disable inputs
+  if (fullDayCheckBox.checked === true) {
+    startTimeInput.disabled = true
+    endTimeInput.disabled = true
+  }
+  // if unchecked - activate the inputs
+  else {
+    startTimeInput.disabled = false
+    endTimeInput.disabled = false
+  }
+}
+
+// eventlistener on the full day checkbox
+fullDayCheckBox.addEventListener("click", toggleTimeInputs)
 
